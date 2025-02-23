@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Librería Online</title>
+    <!-- Incluir Tailwind CSS vía CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Hoja de estilos personalizados -->
+    <link rel="stylesheet" href="./css/estilos.css" />
+  </head>
+  <body class="bg-gray-100">
+    <!-- Header: Logo, Título y botones para Wishlist y Carrito -->
+    <header class="flex items-center justify-between p-4 bg-white shadow">
+      <div class="w-1/3 flex items-center">
+        <!-- Usa el placeholder o tu logo local -->
+        <img src="./assets/img/logo.png" alt="Logo Librería" class="h-10" />
+      </div>
+      <div class="w-1/3 text-center">
+        <h1 class="text-2xl font-bold">Mi Librería</h1>
+      </div>
+      <div class="w-1/3 flex justify-end items-center space-x-4">
+        <div id="wishlist-icon" class="relative cursor-pointer">
+          <img
+            src="./assets/img/wishlist-icon.png"
+            alt="Wishlist"
+            class="h-8"
+          />
+        </div>
+        <div id="cart-icon" class="relative cursor-pointer">
+          <img src="./assets/img/cart-icon.png" alt="Carrito" class="h-8" />
+          <span
+            id="cart-counter"
+            class="absolute top-0 right-0 bg-red-500 text-white rounded-full text-xs px-1"
+            >0</span
+          >
+        </div>
+      </div>
+    </header>
+
+    <!-- Banner principal -->
+    <section
+      class="flex items-center justify-center h-96 bg-cover bg-center"
+      style="background-image: url('./assets/img/banner.jpg')"
+    >
+      <h2 class="text-white text-4xl font-extrabold">
+        Bienvenidos a Mi Librería
+      </h2>
+    </section>
+
+    <!-- Catálogo de libros -->
+    <main
+      id="catalogo"
+      class="p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"
+    >
+      <!-- Las tarjetas se agregarán desde JS -->
+    </main>
+
+    <!-- Panel para la Wishlist -->
+    <aside
+      id="wishlist-panel"
+      class="fixed right-0 top-0 w-80 h-full bg-white shadow transform translate-x-full transition-transform"
+    >
+      <div class="p-4">
+        <h3 class="text-xl font-bold mb-4">Lista de deseos</h3>
+        <div id="wishlist-content">
+          <!-- Aquí se mostrarán los libros de la wishlist -->
+        </div>
+        <button
+          id="close-wishlist"
+          class="mt-4 px-4 py-2 bg-red-500 text-white rounded"
+        >
+          Cerrar
+        </button>
+      </div>
+    </aside>
+
+    <!-- Panel para el Carrito -->
+    <aside
+      id="cart-panel"
+      class="fixed left-0 top-0 w-80 h-full bg-white shadow transform -translate-x-full transition-transform"
+    >
+      <div class="p-4">
+        <h3 class="text-xl font-bold mb-4">Carrito de Compras</h3>
+        <div id="cart-content">
+          <!-- Aquí se mostrarán los libros del carrito -->
+        </div>
+        <button
+          id="close-cart"
+          class="mt-4 px-4 py-2 bg-red-500 text-white rounded"
+        >
+          Cerrar
+        </button>
+      </div>
+    </aside>
+
+    <!-- Archivo principal de JavaScript -->
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>
